@@ -1,5 +1,4 @@
 import React , { useContext, useState, useEffect } from "react";
-import { MovieList } from "../Unwanted/MovieList";
 import { useNavigate } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import InfoIcon from "@mui/icons-material/Info";

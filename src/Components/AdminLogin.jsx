@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-// import Login from "./Login";
 import { useContext } from "react";
 import axios from "axios";
 import { useFormik } from "formik";
@@ -12,16 +11,6 @@ import { toast } from "react-toastify";
 import Button from "@mui/material/Button";
 
 function AdminLogin() {
-  // let admin = [{
-  //   title : "Hi Admin",
-  //   link : "Not Admin ? Click here to login as a user",
-  // }]
-
-  // let user = [{
-  //   title : "Hi User",
-  //   link : "Not User ? Click here to admin"
-  // }]
-
   const navigate = useNavigate();
 
   const validationSchema = yup.object({
@@ -44,7 +33,7 @@ function AdminLogin() {
       try {
         const adminlogin = await axios.post(`${Config.api}/adminlogin`, values);
         localStorage.setItem("react-app-token", adminlogin.data.token);
-        
+
         if (adminlogin.data.error) {
           toast.error("Error: " + adminlogin.data.error);
         } else {
@@ -107,13 +96,6 @@ function AdminLogin() {
                   </div>
 
                   <div className="d-grid gap-2">
-                    {/* <button
-                    className="btn btn-outline-primary btn-user btn-block login-form"
-                    onClick={() => navigate("/onlyadmin")}
-                  >
-                    Login
-                    
-                  </button> */}
                     <Button
                       color="primary"
                       variant="contained"

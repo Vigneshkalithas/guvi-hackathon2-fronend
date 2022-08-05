@@ -1,28 +1,20 @@
-import './App.css';
-import { Router, Route, Routes} from 'react-router';
-import AdminLogin from './Components/AdminLogin';
-import UserLogin from './Components/UserLogin';
-import AdminRegister from './Components/AdminRegister';
-import UserRegister from './Components/UserRegister';
-import Dashboard from './Components/Dashboard';
-import Choose from './Unwanted/Choose';
-import Movies from './Components/Movies';
-import { useNavigate, Link} from "react-router-dom";
-import { useState ,useEffect }from 'react';
-import { MovieDetails } from './Components/MovieDetails';
+import "./App.css";
+import { Router, Route, Routes } from "react-router";
+import AdminLogin from "./Components/AdminLogin";
+import UserLogin from "./Components/UserLogin";
+import AdminRegister from "./Components/AdminRegister";
+import UserRegister from "./Components/UserRegister";
+import Dashboard from "./Components/Dashboard";
+import Movies from "./Components/Movies";
+import { useNavigate, Link } from "react-router-dom";
+import { MovieDetails } from "./Components/MovieDetails";
 import ResponsiveAppBar from "./Components/AppBar";
-import Booking from './Components/Booking';
-import AdminThings from './Components/AdminThings';
+import Booking from "./Components/Booking";
+import AdminThings from "./Components/AdminThings";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from 'axios';
-import { UserProvider } from './Components/usercontext';
+import { UserProvider } from "./Components/usercontext";
 
-
-
-
-
-// const INTIAL_MOVIE_LIST = [
 //   {
 //     name: "RRR",
 //     poster:
@@ -130,51 +122,31 @@ import { UserProvider } from './Components/usercontext';
 //   },
 // ];
 
-
-
 function App() {
-
   const navigate = useNavigate();
-  // const [movieList,setMovieList] = useState([]);
-
-
-  // let fetchAllMovieData = async () => {
-  //   try{
-  //     let fullmovieDatas = await axios.get("http://localhost:4000/movies");
-  //     setMovieList(fullmovieDatas.data);
-  //   }
-  //   catch(error){
-  //     console.log(error);
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   fetchAllMovieData();
-  // }, [])
 
   return (
     <div className="app">
       <ResponsiveAppBar />
       <UserProvider>
-      <Routes>
-      <Route path="/" element={<Dashboard />}/>
-      <Route path="/dashboard" element={<Dashboard/>}/>
-      <Route path="/movies" element={<Movies/>}/>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/movies" element={<Movies />} />
 
-      <Route path="/movies/:movieid" element={<MovieDetails/>} />
-      <Route path="/booking/:movieid" element={<Booking />} />
+          <Route path="/movies/:movieid" element={<MovieDetails />} />
+          <Route path="/booking/:movieid" element={<Booking />} />
 
-      <Route path="/userregister" element={<UserRegister/>}/>
-      <Route path="/adminregister" element={<AdminRegister/>}/>
+          <Route path="/userregister" element={<UserRegister />} />
+          <Route path="/adminregister" element={<AdminRegister />} />
 
-      <Route path="/adminlogin" element={<AdminLogin />}/>
-      <Route path="/userlogin" element={<UserLogin />}/>
-      <Route path="/onlyadmin" element={<AdminThings/>}/>
-    </Routes>
+          <Route path="/adminlogin" element={<AdminLogin />} />
+          <Route path="/userlogin" element={<UserLogin />} />
+          <Route path="/onlyadmin" element={<AdminThings />} />
+        </Routes>
       </UserProvider>
-      
-    <ToastContainer autoClose={2000}/>
-      
+
+      <ToastContainer autoClose={2000} />
     </div>
   );
 }

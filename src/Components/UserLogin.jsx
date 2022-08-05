@@ -1,5 +1,4 @@
 import React from "react";
-// import Login from "./Login";
 import { useNavigate, Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -44,21 +43,12 @@ function UserLogin() {
       
 
 
-        // }
-        //   const userlogin = await axios.post(`${Config.api}/userlogin`, values);
-        //   // console.log(values)
-        //   toast.success(userlogin.data.message);
-        //   formik.resetForm();
-
-        // console.log(login.data.token);
-        // localStorage.setItem("react_app_token", login.data.token);
-        // navigate("/dashboard");
+        
       } catch (error) {
         console.log(error);
       }
     },
-    // alert("hi")
-    // },
+   
   });
 
   return (

@@ -11,7 +11,6 @@ import customer from "../Assets/customer-support.svg";
 import ticket from "../Assets/ticket1.svg";
 import mail from "../Assets/mail.svg";
 
-// const INTIAL_MOVIE_LIST = [
 //   {
 //     name: "RRR",
 //     poster:
@@ -112,7 +111,6 @@ const StreamMovies = [
 ];
 function Dashboard() {
   const navigate = useNavigate();
-  // const [movieList, setMovieList] = useState(INTIAL_MOVIE_LIST);
 
   return (
     <>
@@ -121,8 +119,8 @@ function Dashboard() {
       <MoveItems />
 
       {/* upcoming movies */}
-      
-        <div className="container my-5">
+
+      <div className="container my-5">
         <div className="row">
           <div>
             <h1 className="text-center">Up coming movies</h1>
@@ -167,9 +165,6 @@ function Dashboard() {
                     </div>
                   </div>
                 </CardContent>
-                {/* <CardActions sx={{ display: "flex", justifyContent: "center" }}>
-                  <button className="btn btn-danger" onClick={()=>navigate()}>Book Now</button>
-                </CardActions> */}
               </Card>
             ))}
           </div>

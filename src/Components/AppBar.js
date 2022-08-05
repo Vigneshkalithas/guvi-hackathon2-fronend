@@ -11,20 +11,13 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import LocalMoviesOutlinedIcon from '@mui/icons-material/LocalMoviesOutlined';
-import { GrTicket } from 'react-icons/gr';
 import MovieCreationOutlinedIcon from '@mui/icons-material/MovieCreationOutlined';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-// import Login from "./Login";
-import Register from "./UserRegister";
 import { useNavigate, Link} from "react-router-dom";
-import Movies from "./Movies";
 
 
 
-// const pages = ['Movies', 'Login', 'Signup'];
-const settings = ['Profile','Logout'];
+
 
 const ResponsiveAppBar = () => {
   const navigate = useNavigate();
@@ -66,7 +59,6 @@ const ResponsiveAppBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <MovieCreationOutlinedIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Typography
             variant="h6"
             noWrap
@@ -124,8 +116,9 @@ const ResponsiveAppBar = () => {
                 <MenuItem  onClick={()=>navigate("/adminlogin")}>
                   <Typography textAlign="center">Admin</Typography>
                 </MenuItem>
-                <MenuItem  onClick={()=>navigate("/register")}>
-                  <Typography textAlign="center">Signup</Typography>
+                {/* <MenuItem  onClick={()=>navigate("/register")}> */}
+                <MenuItem  onClick={()=>navigate("/")}>
+                  <Typography textAlign="center">Home</Typography>
                 </MenuItem>
                 
              
@@ -176,10 +169,11 @@ const ResponsiveAppBar = () => {
              </Button>
              <Button
                
-               onClick={()=>navigate("/userregister")}
+              //  onClick={()=>navigate("/userregister")}
+               onClick={()=>navigate("/")}
                sx={{ my: 2, color: 'white', display: 'block' }}
              >
-               Signup
+               Home
              </Button>
             
            
@@ -207,11 +201,7 @@ const ResponsiveAppBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {/* {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))} */}
+             
               <MenuItem><Typography>Profile</Typography></MenuItem>
               <MenuItem><Typography onClick={doLogout}>Logout</Typography></MenuItem>
             </Menu>

@@ -54,9 +54,7 @@ function UpcomingMovies() {
                 </div>
               </div>
             </CardContent>
-            {/* <CardActions sx={{ display: "flex", justifyContent: "center" }}>
-              <button className="btn btn-danger">Book Now</button>
-            </CardActions> */}
+           
           </Card>
         ))}
       </div>
