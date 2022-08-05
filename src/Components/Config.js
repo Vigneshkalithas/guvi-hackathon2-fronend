@@ -1,3 +1,3 @@
 export const Config = {
-    api : "http://localhost:4000",
+    api : "https://book-my-show-app-new.herokuapp.com",
 }
